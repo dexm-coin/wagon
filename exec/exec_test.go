@@ -17,9 +17,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-interpreter/wagon/exec"
-	"github.com/go-interpreter/wagon/validate"
-	"github.com/go-interpreter/wagon/wasm"
+	"github.com/dexm-coin/wagon/exec"
+	"github.com/dexm-coin/wagon/validate"
+	"github.com/dexm-coin/wagon/wasm"
 )
 
 const (

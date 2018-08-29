@@ -12,10 +12,10 @@ import (
 	"io"
 	"math"
 
-	"github.com/go-interpreter/wagon/disasm"
-	"github.com/go-interpreter/wagon/exec/internal/compile"
-	"github.com/go-interpreter/wagon/wasm"
-	ops "github.com/go-interpreter/wagon/wasm/operators"
+	"github.com/dexm-coin/wagon/disasm"
+	"github.com/dexm-coin/wagon/exec/internal/compile"
+	"github.com/dexm-coin/wagon/wasm"
+	ops "github.com/dexm-coin/wagon/wasm/operators"
 )
 
 var (
@@ -163,6 +163,21 @@ func NewVM(module *wasm.Module) (*VM, error) {
 // Memory returns the linear memory space for the VM.
 func (vm *VM) Memory() []byte {
 	return vm.memory
+}
+
+// Globals returns the global variables of the VM
+func (vm *VM) Globals() []uint64 {
+	return vm.globals
+}
+
+// SetMemory replaces the VM's memory
+func (vm *VM) SetMemory(mem []byte) {
+	vm.memory = mem
+}
+
+// SetGlobal replaces the VM's globals
+func (vm *VM) SetGlobal(glo []uint64) {
+	vm.globals = glo
 }
 
 func (vm *VM) pushBool(v bool) {
